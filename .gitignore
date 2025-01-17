@@ -94,3 +94,4 @@ cscope.in.out
 cscope.po.out
 
 .cache
+compile_commands.json
