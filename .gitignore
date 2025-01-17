@@ -59,7 +59,7 @@ core
 *.sln.docstates
 
 # VSCode
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -92,3 +92,5 @@ cscope.files
 cscope.out
 cscope.in.out
 cscope.po.out
+
+.cache
