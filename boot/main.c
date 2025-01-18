@@ -16,7 +16,7 @@
  * BOOT UP STEPS
  *  * when the CPU boots it loads the BIOS into memory and executes it
  *
- *  * the BIOS intializes devices, sets of the interrupt routines, and
+ *  * the nBIOS intializes devices, sets of the iterrupt routines, and
  *    reads the first sector of the boot device(e.g., hard-drive)
  *    into memory and jumps to it.
  *

@@ -64,6 +64,43 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 	// LAB 1: Your code here.
     // HINT 1: use read_ebp().
     // HINT 2: print the current ebp on the first line (not current_ebp[0])
+
+	cprintf("Stack backtrace:\n");
+
+	//read ebp to get location on the stack
+	uint32_t* p_ebp = (uint32_t*)read_ebp(); 
+
+	while (p_ebp) {
+
+		//obtain location of function that stack ptr is pointing to 
+		uint32_t ebp_val = *p_ebp; 
+
+		//eip is return address, right below the ebp
+		uint32_t eip_val = *(p_ebp + 1);
+
+		// Print ebp and eip
+		cprintf("  ebp %08x  eip %08x  args", ebp_val, eip_val);
+
+		//obtain 5 arguments; args start follow ebp, eip on stack 
+		for (int i = 0; i < 5; i++) {
+			cprintf(" %08x", *(p_ebp + i + 2));
+		}
+
+		cprintf("\n");
+
+		//TODO add debuginfo_eip()
+		// struct Eipdebuginfo* info = NULL;
+		// debuginfo_eip(eip_val, info); 
+
+		// cprintf("         %s:%d: %s+%d", info ->eip_file, info -> eip_line, info -> eip_fn_name, eip_val - info -> eip_fn_addr);
+
+		//update the ebp to move to the last stack frame, * chain to however many stacks there is
+		p_ebp = (uint32_t*)(*p_ebp); 
+	}
+	
+
+
+	//call 
 	return 0;
 }
 
