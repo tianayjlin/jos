@@ -1,5 +1,4 @@
 #include <inc/elf.h>
-#include <inc/x86.h>
 
 /**********************************************************************
  * This a dirt simple boot loader, whose sole job is to boot
