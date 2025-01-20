@@ -173,9 +173,7 @@ int debuginfo_eip(uintptr_t addr, struct Eipdebuginfo *info) {
   // Your code here.
   stab_binsearch(stabs, &lline, &rline, N_SLINE, addr);
   if (lline <= rline) {
-    // stabs[lfun] points to the function name
-    // in the string table, but check bounds just in case.
-    info->eip_line = stabs[lline].n_value;
+    info->eip_line = stabs[lline].n_desc;
   } else {
     return -1;
   }

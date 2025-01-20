@@ -27,6 +27,7 @@ static struct Command commands[] = {
     {"help", "Display this list of commands", mon_help},
     {"kerninfo", "Display information about the kernel", mon_kerninfo},
     {"backtrace", "Backtrace the entire stack", mon_backtrace},
+    {"show", "Print a pretty image", mon_show},
     {"hidden", "Run hidden test cases", exec_hidden_cases},
 };
 
@@ -37,6 +38,25 @@ int mon_help(int argc, char **argv, struct Trapframe *tf) {
 
   for (i = 0; i < ARRAY_SIZE(commands); i++)
     cprintf("%s - %s\n", commands[i].name, commands[i].desc);
+  return 0;
+}
+
+int mon_show(int argc, char **argv, struct Trapframe *tf) {
+  cprintf("           \033[32mboing\033[m         \033[33mboing\033[m         "
+          "\033[35mboing\033[m              \n"
+          " \033[31me-e\033[m           . - .         . - .         . - .   "
+          "       \n"
+          "\033[36m(\\_/)\\\033[m       '       `.   ,'       `.   ,'       "
+          ".    "
+          "    \n"
+          " \033[36m`-'\\ `--.___,\033[m         . .           . .          "
+          ".       \n"
+          "    \033[36m'\\( ,_.-'\033[m                                     "
+          "        \n"
+          "       \033[36m\\\\\033[m               "
+          "            a:f    \n"
+          "       \033[36m^'\033[m\n");
+
   return 0;
 }
 
@@ -86,8 +106,8 @@ int mon_backtrace(int argc, char **argv, struct Trapframe *tf) {
     struct Eipdebuginfo info;
     debuginfo_eip(eip_val, &info);
 
-    cprintf("         %s:%d: %s+%d\n", info.eip_file, info.eip_line,
-            info.eip_fn_name, eip_val - info.eip_fn_addr);
+    cprintf("         %s:%d: %.*s+%d\n", info.eip_file, info.eip_line,
+            info.eip_fn_namelen, info.eip_fn_name, eip_val - info.eip_fn_addr);
 
     // update the ebp to move to the last stack frame, * chain to however many
     // stacks there is
