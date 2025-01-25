@@ -1,5 +1,6 @@
 #include <kern/hidden.h>
 
+
 void 
 hidden_test_cases(void)
 {
@@ -7,3 +8,4 @@ hidden_test_cases(void)
     // Redacted
     cprintf("Hidden memory management checks passed!\n");
 }
+
