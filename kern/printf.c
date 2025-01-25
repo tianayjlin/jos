@@ -5,11 +5,13 @@
 #include <inc/stdio.h>
 #include <inc/types.h>
 
+//outputs the char and keeps track of length.
 static void putch(int ch, int *cnt) {
   cputchar(ch);
   *cnt++;
 }
 
+//determines format specifiers
 int vcprintf(const char *fmt, va_list ap) {
   int cnt = 0;
 
@@ -17,6 +19,7 @@ int vcprintf(const char *fmt, va_list ap) {
   return cnt;
 }
 
+//accepts format string and optional arguments
 int cprintf(const char *fmt, ...) {
   va_list ap;
   int cnt;
@@ -27,3 +30,8 @@ int cprintf(const char *fmt, ...) {
 
   return cnt;
 }
+
+/*
+Lab 1, Exercise 8
+cprintf() -> vcprintf() -> putch() -> kern/console.c/putchar(); 
+*/

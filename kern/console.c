@@ -165,15 +165,16 @@ static void cga_putc(int c) {
     break;
   }
 
-  // What is the purpose of this?
+  // What is the purpose of this? Scrolling.
   if (crt_pos >= CRT_SIZE) {
     int i;
 
+    //move entire chunk back up to the first line
     memmove(crt_buf, crt_buf + CRT_COLS,
             (CRT_SIZE - CRT_COLS) * sizeof(uint16_t));
-    for (i = CRT_SIZE - CRT_COLS; i < CRT_SIZE; i++)
+    for (i = CRT_SIZE - CRT_COLS; i < CRT_SIZE; i++) //clear bottom portion by padding with empty spaces
       crt_buf[i] = 0x0700 | ' ';
-    crt_pos -= CRT_COLS;
+    crt_pos -= CRT_COLS; //move the cursor back up
   }
 
   /* move that little blinky thing */
