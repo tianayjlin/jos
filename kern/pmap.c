@@ -1,5 +1,7 @@
 /* See COPYRIGHT for copyright information. */
 
+#include "inc/memlayout.h"
+#include "inc/types.h"
 #include <inc/x86.h>
 #include <inc/mmu.h>
 #include <inc/error.h>
@@ -103,9 +105,26 @@ boot_alloc(uint32_t n)
 	// nextfree.  Make sure nextfree is kept aligned
 	// to a multiple of PGSIZE.
 	//
-	// LAB 2: Your code here.
+	// LAB 2: Your code here
+	
+	if (n == 0) {
+		return nextfree;
+	}
 
-	return NULL;
+	//how many pages should we allocate
+	uint32_t alloc_bytes = ROUNDUP(n, PGSIZE);
+	uint32_t num_pages = alloc_bytes / PGSIZE;
+
+	//if exceed pages available
+	if(num_pages > npages) {
+		panic("STOP DROP AND ROLL. you tried to alloc more pages than possible. >:(");
+	}
+
+	//move nextfree to the end of the block and return current add. 
+	result = nextfree; 
+	nextfree += alloc_bytes; 
+
+	return result;
 }
 
 // Set up a two-level page table:
@@ -127,7 +146,7 @@ mem_init(void)
 	i386_detect_memory();
 
 	// Remove this line when you're ready to test this function.
-	panic("mem_init: This function is not finished\n");
+	// panic("mem_init: This function is not finished\n");
 
 	//////////////////////////////////////////////////////////////////////
 	// create initial page directory.
@@ -150,7 +169,9 @@ mem_init(void)
 	// array.  'npages' is the number of physical pages in memory.  Use memset
 	// to initialize all fields of each struct PageInfo to 0.
 	// Your code goes here:
-
+	
+	pages = (struct PageInfo*) boot_alloc(npages * sizeof(struct PageInfo));
+	memset(pages, 0, npages * sizeof(struct PageInfo));
 
 	//////////////////////////////////////////////////////////////////////
 	// Now that we've allocated the initial kernel data structures, we set
@@ -258,11 +279,20 @@ page_init(void)
 	// Change the code to reflect this.
 	// NB: DO NOT actually touch the physical memory corresponding to
 	// free pages!
+
+	//populate page_free_list with all the pages because they are all unused. 
+
+	// 1)
+	pages[0].pp_ref = 1; 
+	pages[0].pp_link = NULL; 
+	page_free_list = NULL; // this is not a free list! 
+
+	//now, actually build the linked list of UNUSED pages
 	size_t i;
-	for (i = 0; i < npages; i++) {
-		pages[i].pp_ref = 0;
-		pages[i].pp_link = page_free_list;
-		page_free_list = &pages[i];
+	for (i = 1; i < npages; i++) { 
+		pages[i].pp_ref = 0;  
+		pages[i].pp_link = page_free_list; 
+		page_free_list = &pages[i]; 
 	}
 }
 
@@ -280,9 +310,25 @@ page_init(void)
 // Hint: use page2kva and memset
 struct PageInfo *
 page_alloc(int alloc_flags)
-{
-	// Fill this function in
-	return 0;
+{	
+	// Check if any free pages
+	if (page_free_list == NULL) {
+		return NULL;
+	}
+
+	//navigate to a free page 
+	struct PageInfo* free_page = page_free_list; 
+
+	//rewire page_free_list because you just ripped off a page 
+	page_free_list = free_page -> pp_link;
+	free_page -> pp_link = NULL;
+
+	// If wipe, then wipe
+	if (alloc_flags & ALLOC_ZERO){
+		memset(page2kva(free_page), '\0', PGSIZE);
+	}
+
+	return free_page;
 }
 
 //
