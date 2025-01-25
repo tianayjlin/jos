@@ -1,5 +1,6 @@
 // Simple command-line kernel monitor useful for
 // controlling the kernel and exploring the system interactively.
+
 #include <inc/stdio.h>
 #include <inc/string.h>
 #include <inc/memlayout.h>
@@ -10,7 +11,7 @@
 #include <kern/monitor.h>
 #include <kern/kdebug.h>
 
-#define CMDBUF_SIZE 80 // enough for one VGA text line
+#define CMDBUF_SIZE	80	// enough for one VGA text line
 
 struct Command {
   const char *name;
@@ -21,9 +22,10 @@ struct Command {
 
 // LAB 1: add your command to here...
 static struct Command commands[] = {
-	{ "help", "Display this list of commands", mon_help },
-	{ "kerninfo", "Display information about the kernel", mon_kerninfo },
-	// { "hidden", "Run hidden test cases", exec_hidden_cases},
+    {"help", "Display this list of commands", mon_help},
+    {"kerninfo", "Display information about the kernel", mon_kerninfo},
+    {"backtrace", "Backtrace the entire stack", mon_backtrace},
+    {"show", "Print a pretty image", mon_show},
 };
 
 /***** Implementations of basic kernel monitor commands *****/
@@ -108,11 +110,6 @@ int mon_backtrace(int argc, char **argv, struct Trapframe *tf) {
   // call
   return 0;
 }
-
-// int exec_hidden_cases(int argc, char **argv, struct Trapframe *tf) {
-// 	hidden_test_cases();
-// 	return 0;
-// }
 
 /***** Kernel monitor command interpreter *****/
 
