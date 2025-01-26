@@ -354,7 +354,7 @@ void page_free(struct PageInfo *pp) {
 
   if (pp->pp_ref != 0 || pp->pp_link != NULL) {
     panic("OH NOSE! Looks like you tried to free a page that wasn't ready to "
-          "be freed yet... Bitch...");
+          "be freed yet...");
   }
 
   pp->pp_link = page_free_list;
