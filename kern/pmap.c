@@ -146,8 +146,8 @@ void mem_init(void) {
 
   //////////////////////////////////////////////////////////////////////
   // create initial page directory.
-  kern_pgdir = (pde_t *)boot_alloc(PGSIZE);
-  memset(kern_pgdir, 0, PGSIZE);
+  kern_pgdir = (pde_t *)boot_alloc(PGSIZE); // allocate a single page
+  memset(kern_pgdir, 0, PGSIZE); //make them blank
 
   //////////////////////////////////////////////////////////////////////
   // Recursively insert PD in itself as a page table, to form
@@ -156,7 +156,9 @@ void mem_init(void) {
   // following line.)
 
   // Permissions: kernel R, user R
-  kern_pgdir[PDX(UVPT)] = PADDR(kern_pgdir) | PTE_U | PTE_P;
+  // from the virtual address of UVPT, extract the page directory index, set user permissions to the physical memory block
+  // at that page tabe entry (set up the segment that the page table is supposed to map to)
+  kern_pgdir[PDX(UVPT)] = PADDR(kern_pgdir) | PTE_U | PTE_P; 
 
   //////////////////////////////////////////////////////////////////////
   // Allocate an array of npages 'struct PageInfo's and store it in 'pages'.

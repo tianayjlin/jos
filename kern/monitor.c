@@ -1,6 +1,8 @@
 // Simple command-line kernel monitor useful for
 // controlling the kernel and exploring the system interactively.
 
+#include "inc/mmu.h"
+#include "inc/types.h"
 #include <inc/stdio.h>
 #include <inc/string.h>
 #include <inc/memlayout.h>
@@ -10,6 +12,7 @@
 #include <kern/console.h>
 #include <kern/monitor.h>
 #include <kern/kdebug.h>
+#include <kern/pmap.h>
 
 #define CMDBUF_SIZE	80	// enough for one VGA text line
 
@@ -26,6 +29,7 @@ static struct Command commands[] = {
     {"kerninfo", "Display information about the kernel", mon_kerninfo},
     {"backtrace", "Backtrace the entire stack", mon_backtrace},
     {"show", "Print a pretty image", mon_show},
+    {"showmappings", "Easy to read format of physical page mappings", mon_showmappings},
 };
 
 /***** Implementations of basic kernel monitor commands *****/
@@ -108,6 +112,63 @@ int mon_backtrace(int argc, char **argv, struct Trapframe *tf) {
   }
 
   // call
+  return 0;
+}
+
+static void print_flags(pte_t pte, physaddr_t phys_addr, uint32_t virt_addr) {
+    char perms[9] = "--------\0";
+    if (pte & PTE_U) perms[0] = 'U';
+    if (pte & PTE_W) perms[1] = 'W';
+    if (pte & PTE_PWT) perms[2] = 'T';
+    if (pte & PTE_PCD) perms[3] = 'C';
+    if (pte & PTE_A) perms[4] = 'A';
+    if (pte & PTE_D) perms[5] = 'D';
+    if (pte & PTE_PS) perms[6] = 'S';
+    if (pte & PTE_G) perms[7] = 'G';
+
+    cprintf("0x%08x         0x%08x          %s\n", virt_addr, phys_addr, perms);
+}
+
+int mon_showmappings(int argc, char **argv, struct Trapframe *tf) {
+  
+  // showmappings is argv[0]
+  // convert addresses to integers 
+  if (argc < 2 || argc > 3) {
+    cprintf("i am writing this so i don't have to restart the kernel every time i type the function invocation incorrectly.\n");
+    return -1;
+  }
+
+    // turn the inputs into values that can be later cast as an address
+  uint32_t l_bound = strtol(argv[1], NULL, 16); 
+  uint32_t r_bound = argc == 2 ? l_bound : strtol(argv[2], NULL, 16) ;
+   
+  // check to make sure that l_bound > r_bound and r_bound - l_bound 
+  if(l_bound > r_bound) {
+    cprintf("the addresses that you have provided do not constitute a valid page range. try again.\n"); 
+    return -1;
+  }
+
+  // Align bounds with page size
+  l_bound = ROUNDDOWN(l_bound, PGSIZE);
+  r_bound = ROUNDUP(r_bound, PGSIZE);
+
+  cprintf("Displaying Page Info for VA [0x%08x] - [0x%08x]\n", l_bound, r_bound);
+  cprintf("Virtual Address    Physical Address    Permissions\n");
+  cprintf("--------------------------------------------------\n");
+  for(uint32_t i = l_bound; i <= r_bound; i += PGSIZE) {
+    // Get pte
+    pte_t *pte = pgdir_walk(kern_pgdir, (void*)i, 0);
+
+    // Check if pte exists
+    if (!pte || !(*pte & PTE_P)) {
+      cprintf("0x%08x         Not Mapped          --\n");
+      continue;
+    } else {
+      print_flags(*pte, PTE_ADDR(*pte), i);
+    }
+    
+  }
+
   return 0;
 }
 
