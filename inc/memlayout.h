@@ -19,7 +19,7 @@
 #define GD_TSS0 0x28 // Task segment selector for CPU 0
 
 /*
- * Virtual memory map:                                Permissions
+ *Virtual memory map:                                Permissions
  *                                                    kernel/user
  *
  *    4 Gig -------->  +------------------------------+
@@ -31,8 +31,8 @@
  *                     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| RW/--
  *                     |                              | RW/--
  *                     |   Remapped Physical Memory   | RW/--
- *                     |                              | RW/--
- *    KERNBASE, ---->  +------------------------------+ 0xf0000000      --+
+ *                     |                              | RW/-- 
+ *    KERNBASE, ---->  +------------------------------+ 0xf0000000     --+
  *    KSTACKTOP        |     CPU0's Kernel Stack      | RW/--  KSTKSIZE   |
  *                     | - - - - - - - - - - - - - - -|                   |
  *                     |      Invalid Memory (*)      | --/--  KSTKGAP    |
@@ -168,7 +168,7 @@ extern volatile pde_t uvpd[];     // VA of current page directory
  * Each struct PageInfo stores metadata for one physical page.
  * Is it NOT the physical page itself, but there is a one-to-one
  * correspondence between physical pages and struct PageInfo's.
- * You can map a struct PageInfo * to the corresponding physical address
+ * You can map a struct PageInfo * to the corresponding physical address 
  * with page2pa() in kern/pmap.h.
  */
 struct PageInfo {
