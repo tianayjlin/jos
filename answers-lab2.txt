@@ -1,0 +1,55 @@
+Exercise 3 Questions
+*******************************************************************
+We know that value is of uintptr_t, because we are able to dereference it in order to set the value. The way `x` is assigned to `value` implies that we are making a shallow copy of `value`. Since `x` must retain the ability to modify and access pointer values per the definition of shallow copy, we can surmise that it will be of type uintptr_t. 
+
+Exercise 5 Questions 
+*******************************************************************
+a. Remember in JOS, that 0xf0000000 - 0xffffffff in virtual memory corresponds to 0x0 - 0x0fffffff in physical memory (256 MB).
+The top of the VIRTUAL address space as indicated by memlayout.h is 4 GB, and if we offset it to the first 4 MB:
+0x1_0000_0000 - 0x0040_0000 = 0xFFC00000. Every in the entry table also maps to a 4 MB page table, when dereferenced, although each entry itself is a 4 byte address (the Page Directory is only 4KB)
++-----+----------------------+---------------------------------------+
+|Entry| Base Virtual Address |  Points to (logically)                |
++=====+======================+=======================================+
+|1023 | 0xFFC00000           | Page table for top 4MB of phys memory |
++-----+----------------------+---------------------------------------+
+|1022 | 0xFF800000           | Penultimate 4MB of physical memory    |
++-----+----------------------+---------------------------------------+
+|.    | ?                    | ?                                     |
++-----+----------------------+---------------------------------------+
+|.    | 0xF0000000           | KERNBASE, start of physical memory    |
++-----+----------------------+---------------------------------------+
+|.    | ?                    | ?                                     |
++-----+----------------------+---------------------------------------+
+|2    | 0x00800000           | UTEXT                                 |
++-----+----------------------+---------------------------------------+
+|1    | 0x00400000           | UTEMP                                 |
++-----+----------------------+---------------------------------------+
+|0    | 0x00000000           | [see next question]                   |
++-----+----------------------+---------------------------------------+
+
+b. Page Table Entries store protection flags e.g. PTE_U. When PTE_U is marked 0, only the kernel can access that range of addresses. In the CPU, the 80386 Segment Descriptor dictates permissions using the Descriptor Privilege Level (DPL) bit. Here, different segments are available to different "rings", or level of permissions. All higher rings may access all material below its privilege level, but not above its privilege level.
+
+c. With paging on, and referencing the 32 bit address. From MSB to LSB, 10 bits are directory index, 10 bits are table index, and the final 12 bits refer to offset. For the page directory, and page table, you have to multiply them by 4 bytes each, because the size of each entry is a 4 byte address, where the physical page is a byte level index.
+
+page directory  ----->   page table -> physical page 
+2^10 = 1024 entries     2^10 = 1024    4KB 
+1024 * 4 = 4096 bytes   4KB
+         = 4KB
+
+number of pages = 1024 * 1024 
+total memory supported = 2 * 2^10 * 2^20
+		       = 2^31
+  		       = ~ 4 GB (a little more than 4 GB)
+
+d. We know that the page directory memory takes up 4 KB, due to having 2^10 entries each holding a four byte address, and the addresses of the PDE point to page tables, which each take up 4 KB. Furthermore, to allow the user (us) to interface with these pages, there is also memory allocated towards the struct PageInfo, which takes up 4 bytes for PageInfo* pp_link, and 2 bytes for uint16_t pp_ref, for a total of 6 bytes. The following calculations assume that the virtual address space is the same size as the physical address space (4GB RAM).
+
+4 GB virtual address space, each entry is 4 KB, 4GB/4KB = 2^30 / 2^10 = 2^20 pages
+There are 1024 (2^10, not bytes) in a table, so that means there are 2^20 / 2^10 = 2^10 page tables 
+
+sizeof(page directory) + 1024 * sizeof(page tables) + 2^20 * sizeof(PageInfo) (you need a page info to manage each physical address)
+= 2^20 + 2^10 * 2^10 + 2^20 * 6
+= 7 * 2^20 + 2 * 2^10
+= ~ 7 MB
+
+e. When paging is enabled, it simply tells the system that the addresses are now virtual -- it does not set up the page tables for you. Therefore, it would be considered unsafe to jump to a higher virtual address, especially since the higher virtual address may exceed the physical bounds of the machine. entrypgdir.c sets up a very rudimentary mapping for the first 4 MB, only for the kernel base region, sufficient for kernel initialization. After the kernel as has been initialized, line 67 in entry.S calls the C function i386_init (in init.c) which is responsible for calling mem_init() to alloc appropriate memory and create the direct mapping of page tables. It is only after mem_init() is executed that we are able to safely move the EIP to a higher address above KERNBASE.
+
