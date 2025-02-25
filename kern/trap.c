@@ -1,3 +1,4 @@
+#include "inc/trap.h"
 #include <inc/mmu.h>
 #include <inc/x86.h>
 #include <inc/assert.h>
@@ -100,7 +101,7 @@ trap_init(void)
 	SETGATE(idt[T_DIVIDE], 0, GD_KT, t_divide, 0);
 	SETGATE(idt[T_DEBUG], 0, GD_KT, t_debug, 0);
 	SETGATE(idt[T_NMI], 0, GD_KT, t_nmi, 0);
-	SETGATE(idt[T_BRKPT], 0, GD_KT, t_brkpt, 0);
+	SETGATE(idt[T_BRKPT], 0, GD_KT, t_brkpt, 3);
 	SETGATE(idt[T_OFLOW], 0, GD_KT, t_oflow, 0);
 	SETGATE(idt[T_BOUND], 0, GD_KT, t_bound, 0);
 	SETGATE(idt[T_ILLOP], 0, GD_KT, t_illop, 0);
@@ -115,8 +116,8 @@ trap_init(void)
 	SETGATE(idt[T_ALIGN], 0, GD_KT, t_align, 0);
 	SETGATE(idt[T_MCHK], 0, GD_KT, t_mchk, 0);
 	SETGATE(idt[T_SIMDERR], 0, GD_KT, t_simderr, 0);
-	SETGATE(idt[T_SYSCALL], 0, GD_KT, t_syscall, 0);
-	SETGATE(idt[T_DEFAULT], 0, GD_KT, t_default, 0);
+	SETGATE(idt[T_SYSCALL], 0, GD_KT, t_syscall, 3);
+	//SETGATE(idt[T_DEFAULT], 0, GD_KT, t_default, 0);
 
 	// Per-CPU setup
 	trap_init_percpu();
@@ -197,13 +198,28 @@ trap_dispatch(struct Trapframe *tf)
 	// Handle processor exceptions.
 	// LAB 3: Your code here.
 
-	// Unexpected trap: The user process or the kernel has a bug.
-	print_trapframe(tf);
-	if (tf->tf_cs == GD_KT)
-		panic("unhandled trap in kernel");
-	else {
-		env_destroy(curenv);
-		return;
+	switch (tf->tf_trapno) {
+		case T_PGFLT: 
+		{
+			page_fault_handler(tf);
+			break;
+		}
+		case T_BRKPT: 
+		{
+			monitor(tf);
+			break;
+		}
+		default: 
+		{
+			// Unexpected trap: The user process or the kernel has a bug.
+			print_trapframe(tf);
+			if (tf->tf_cs == GD_KT)
+				panic("unhandled trap in kernel");
+			else {
+				env_destroy(curenv);
+				return;
+			}
+		}
 	}
 }
 
