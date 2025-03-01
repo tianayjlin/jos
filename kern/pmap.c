@@ -587,6 +587,24 @@ user_mem_check(struct Env *env, const void *va, size_t len, int perm)
 {
 	// LAB 3: Your code here.
 
+  // obtain start and end of the address space we want to check
+  uintptr_t start =  (uintptr_t) va;
+  uintptr_t end = start + len;
+
+  // for every address, obtain PTE and check permissions
+  while(start < end) {
+    
+    pte_t* pte = pgdir_walk(env -> env_pgdir, (void*) start, 0 );
+
+    // check permission and possibility of OOB for every address 
+    if (!pte || start >= ULIM || !(*pte & perm)) { 
+      user_mem_check_addr = start;
+      return -E_FAULT;
+    }
+
+    start++; 
+  }
+  
 	return 0;
 }
 

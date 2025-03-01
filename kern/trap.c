@@ -209,6 +209,19 @@ trap_dispatch(struct Trapframe *tf)
 			monitor(tf);
 			break;
 		}
+		case T_SYSCALL:
+		{	
+			int32_t ret = syscall(tf -> tf_regs.reg_eax, 
+				                  tf -> tf_regs.reg_edx,
+								  tf -> tf_regs.reg_ecx,
+								  tf -> tf_regs.reg_ebx,
+								  tf -> tf_regs.reg_edi,
+								  tf -> tf_regs.reg_esi
+								  );
+		
+			tf -> tf_regs.reg_eax = ret;
+			break; 
+		}
 		default: 
 		{
 			// Unexpected trap: The user process or the kernel has a bug.
@@ -273,7 +286,11 @@ page_fault_handler(struct Trapframe *tf)
 	// Handle kernel-mode page faults.
 
 	// LAB 3: Your code here.
-
+	
+	if (!(tf -> tf_cs & 3)) {
+		panic("kernel mode page fault. you may not proceed!!!!");
+	}
+	
 	// We've already handled kernel-mode exceptions, so if we get here,
 	// the page fault happened in user mode.
 
