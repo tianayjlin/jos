@@ -1,5 +1,0 @@
-Exercise 4 Questions 
-*******************************************************************
-1. The purpose of having an individual function for each handler/exception is because it allows for appropriate of different events. Some interrupts require a graceful termination, some involve accessing and changing values, among differences. If multiple different interrupts were run, it allows for a clear, descriptive stack, because each interrupt handler is contained in its own stack frame, or scope. 
-
-2. Page operations are only allowed in the kernel, hence a page fault interrupt can only be raised by kernel mode/Ring 0. However, we are currently in user mode, and the user cannot access such information. General protection is the "catch all" for faults. 

@@ -28,7 +28,6 @@ KERN_SRCFILES :=	kern/entry.S \
 			kern/sched.c \
 			kern/syscall.c \
 			kern/kdebug.c \
-			kern/hidden.c \
 			lib/printfmt.c \
 			lib/readline.c \
 			lib/string.c

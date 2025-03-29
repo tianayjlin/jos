@@ -1,3 +1,0 @@
-CompileFlags:
-  Add: [-Wno-unknown-warning-option, -Wno-int-to-pointer-cast, -Wno-pointer-to-int-cast]
-  Remove: [-m*, -f*]
