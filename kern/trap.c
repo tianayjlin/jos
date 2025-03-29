@@ -152,18 +152,18 @@ trap_init_percpu(void)
 
 	// Setup a TSS so that we get the right stack
 	// when we trap to the kernel.
-	ts.ts_esp0 = KSTACKTOP;
-	ts.ts_ss0 = GD_KD;
-	ts.ts_iomb = sizeof(struct Taskstate);
+	thiscpu -> cpu_ts.ts_esp0 = KSTACKTOP - cpunum() * (KSTKSIZE + KSTKGAP);
+	thiscpu -> cpu_ts.ts_ss0 = GD_KD;
+	thiscpu -> cpu_ts.ts_iomb = sizeof(struct Taskstate);
 
 	// Initialize the TSS slot of the gdt.
-	gdt[GD_TSS0 >> 3] = SEG16(STS_T32A, (uint32_t) (&ts),
+	gdt[(GD_TSS0 >> 3) + cpunum()] = SEG16(STS_T32A, (uint32_t) (&thiscpu -> cpu_ts),
 					sizeof(struct Taskstate) - 1, 0);
-	gdt[GD_TSS0 >> 3].sd_s = 0;
+	gdt[(GD_TSS0 >> 3) + cpunum()].sd_s = 0;
 
 	// Load the TSS selector (like other segment selectors, the
 	// bottom three bits are special; we leave them 0)
-	ltr(GD_TSS0);
+	ltr(GD_TSS0 + (cpunum() << 3));
 
 	// Load the IDT
 	lidt(&idt_pd);
@@ -248,7 +248,7 @@ trap_dispatch(struct Trapframe *tf)
         }
     }
 
-	// Handle spurious interrupts
+	// Handle spurious interrup	
 	// The hardware sometimes raises these because of noise on the
 	// IRQ line or other reasons. We don't care.
 	if (tf->tf_trapno == IRQ_OFFSET + IRQ_SPURIOUS) {
@@ -297,6 +297,7 @@ trap(struct Trapframe *tf)
 		// Acquire the big kernel lock before doing any
 		// serious kernel work.
 		// LAB 4: Your code here.
+		lock_kernel();
 		assert(curenv);
 
 		// Garbage collect if current enviroment is a zombie
@@ -383,10 +384,44 @@ page_fault_handler(struct Trapframe *tf)
 
 	// LAB 4: Your code here.
 
-	// Destroy the environment that caused the fault.
-	cprintf("[%08x] user fault va %08x ip %08x\n",
-		curenv->env_id, fault_va, tf->tf_eip);
-	print_trapframe(tf);
-	env_destroy(curenv);
+	// handle lack of page fault upcall and overflow 
+	if (curenv -> env_pgfault_upcall == NULL || tf -> tf_esp > USTACKTOP || tf -> tf_esp < UXSTACKTOP - PGSIZE){
+
+		// Destroy the environment that caused the fault.
+		cprintf("[%08x] user fault va %08x ip %08x\n",
+			curenv->env_id, fault_va, tf->tf_eip);
+		print_trapframe(tf);
+		env_destroy(curenv);
+	}
+
+	// slap on some user trap frames
+	uint32_t stack_top; 
+	// starting the exception stack
+	if (tf -> tf_esp < USTACKTOP) {
+		stack_top = UXSTACKTOP - sizeof(struct UTrapframe);
+	}
+	else { // continue to push onto the user exception stack, along with buffer
+		stack_top = tf -> tf_esp - 4 - sizeof(struct UTrapframe); 
+	}
+
+	// check that current environment can place utrapframe onto stack
+	user_mem_assert(curenv, (void*)stack_top, sizeof(struct UTrapframe), PTE_W | PTE_U);
+
+	// actually push the utrapframe onto stack 
+	// this moves the trapped error to a user trap
+	struct UTrapframe* x_trap = (struct UTrapframe*)stack_top; 
+	x_trap -> utf_fault_va = fault_va; 
+	x_trap -> utf_err = tf -> tf_err;
+	x_trap -> utf_regs = tf -> tf_regs; 
+	x_trap -> utf_eip = tf -> tf_eip; 
+	x_trap -> utf_eflags = tf -> tf_eflags;
+	x_trap -> utf_esp = tf -> tf_esp;
+
+	// update the stack pointer because it doesn't move itself:(
+	tf -> tf_esp = (uintptr_t)stack_top; 
+	tf -> tf_eip = (uintptr_t)curenv -> env_pgfault_upcall;
+
+	env_run(curenv); 
+
 }
 

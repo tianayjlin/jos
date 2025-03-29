@@ -30,6 +30,34 @@ sched_yield(void)
 
 	// LAB 4: Your code here.
 
+	// 0 is not necessarily the current_env, but you still want to iterate through NENV enironments
+	// i just serves as a counter to ensure you are doing it NENV times
+	size_t next_idx;  
+
+	// there is no current env running/you are past the "end"
+	if(curenv == NULL) {
+		next_idx = 0; 
+	}
+	else {
+		size_t curr_idx = ENVX(curenv -> env_id);
+		next_idx = (curr_idx + 1) % NENV;
+	}
+
+	for (size_t i = 0; i < NENV; i++) {
+		
+		// if there is a next environment that is runnable, run it 
+		if(envs[next_idx].env_status == ENV_RUNNABLE) {
+			env_run(&envs[next_idx]);
+		} 
+
+		next_idx = (next_idx + 1) % NENV;
+	}
+
+	// keep running if you're already processing something
+	if (curenv != NULL && curenv -> env_status == ENV_RUNNING) {
+		env_run(curenv);
+	}
+
 	// sched_halt never returns
 	sched_halt();
 }
