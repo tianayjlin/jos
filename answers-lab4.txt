@@ -1,0 +1,11 @@
+----------Exercise 2----------
+1. The purpose of macro MPBOOTPHYS is to calculate the absolute addresses of symbols, rather than relying on the linker to fill them. Since AP entry points are determined at runtime, addresses are provided by the linker. To avoid any potentially unsafe memory accesses in real mode, we must convert them to their absolute addresses to have precise control to where the AP is running. 
+
+----------Exercise 5----------
+1. The kernel lock just makes sure that there is no data races when kernel code is being executed. We need separate kernel stacks for each CPU to prevent execution from interfering with one another, because multiple CPUs can trap into the kernel simultaneously. For example, if another CPU pushes onto the same stack while one is executing, it may result in stack corruption and loss of register data (and therefore, previous execution state).
+
+----------Exercise 6----------
+1. Virtual addressing allows different processes to use the same addresses as long as a mapping to a physical address exists.
+
+2. We must save the old environment registers in order to continue execution smoothly in the old environment. This happens in env_run(), where we run env_pop_tf(), which is wrapper for popping the stack.
+	
