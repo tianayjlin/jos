@@ -23,28 +23,16 @@ int32_t
 ipc_recv(envid_t *from_env_store, void *pg, int *perm_store)
 {
 	// LAB 4: Your code here.
-	int r; 
-	if (pg == NULL){
-		r = sys_ipc_recv((void*)UTOP);
+	int r = sys_ipc_recv((pg ? pg : (void *) UTOP));
+
+	if (from_env_store != NULL) {
+		*from_env_store = r ? 0 : thisenv->env_ipc_from;
 	}
-	else {
-		r = sys_ipc_recv(pg);
-	}
-	
-	if (r != 0) {
-		*from_env_store = 0; 
-		*perm_store = 0;
-	}
-	else {
-		if (from_env_store != NULL){
-			*from_env_store = thisenv -> env_ipc_from; 
-		}
-		if(perm_store != NULL){
-			*perm_store = thisenv -> env_ipc_perm;
-		}
+	if (perm_store != NULL) {
+		*perm_store = r ? 0 : thisenv->env_ipc_perm;
 	}
 
-	return thisenv -> env_ipc_value;
+	return thisenv->env_ipc_value;
 }
 
 // Send 'val' (and 'pg' with 'perm', if 'pg' is nonnull) to 'toenv'.

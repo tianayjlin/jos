@@ -89,18 +89,18 @@ sys_exofork(void)
 
 	// LAB 4: Your code here.
 
-	struct Env* new_env; 
+	struct Env* new_env;
 	int status = env_alloc(&new_env, curenv -> env_id);
 
 	if (status < 0) {
 		return status;
-	} 
+	}
 
-	new_env -> env_status = ENV_NOT_RUNNABLE; 
+	new_env -> env_status = ENV_NOT_RUNNABLE;
 	memcpy((void*)&new_env -> env_tf, (void*)&curenv -> env_tf, sizeof(struct Trapframe));
 
-	new_env -> env_tf.tf_regs.reg_eax = 0; 
-	
+	new_env -> env_tf.tf_regs.reg_eax = 0;
+
 	return new_env -> env_id;
 }
 
@@ -122,14 +122,14 @@ sys_env_set_status(envid_t envid, int status)
 
 	// LAB 4: Your code here.
 
-	if (status != ENV_NOT_RUNNABLE && status != ENV_RUNNABLE) { 
+	if (status != ENV_NOT_RUNNABLE && status != ENV_RUNNABLE) {
 		return -E_INVAL;
 	}
-	
-	struct Env* e; 
+
+	struct Env* e;
 	if(envid2env(envid, &e, 1) == 0) {
 		e -> env_status = status;
-		return 0; 
+		return 0;
 	}
 
 	return -E_BAD_ENV;
@@ -147,14 +147,14 @@ static int
 sys_env_set_pgfault_upcall(envid_t envid, void *func)
 {
 	// LAB 4: Your code here.
-	struct Env* e; 
+	struct Env* e;
 	if(envid2env(envid, &e, 1) < 0) {
-		return -E_BAD_ENV; 
+		return -E_BAD_ENV;
 	}
 
-	e -> env_pgfault_upcall = func; 
-	
-	return 0; 
+	e -> env_pgfault_upcall = func;
+
+	return 0;
 }
 
 // Allocate a page of memory and map it at 'va' with permission
@@ -184,30 +184,30 @@ sys_page_alloc(envid_t envid, void *va, int perm)
 	//   allocated!
 
 	// LAB 4: Your code here.
-	
-	struct Env* e; 
+
+	struct Env* e;
 	if(envid2env(envid, &e, 1) < 0) {
 		return -E_BAD_ENV;
 	}
 
 	if ((uint32_t)va >=  UTOP || (uint32_t)va % PGSIZE != 0) {
-		return -E_INVAL; 
+		return -E_INVAL;
 	}
 
 	if ((perm & PTE_U) != PTE_U || (perm & PTE_P) != PTE_P) {
 		return -E_INVAL;
 	}
-	
+
 	if ((perm & ~PTE_SYSCALL) != 0) {
 		return -E_INVAL;
 	}
 
-	struct PageInfo* pp = page_alloc(ALLOC_ZERO); 
+	struct PageInfo* pp = page_alloc(ALLOC_ZERO);
 	if (!pp) {
 		return -E_NO_MEM;
 	}
 	if(page_insert(e -> env_pgdir, pp, va, perm) < 0) {
-		page_free(pp); 
+		page_free(pp);
 		return -E_NO_MEM;
 	}
 
@@ -242,31 +242,31 @@ sys_page_map(envid_t srcenvid, void *srcva,
 	//   check the current permissions on the page.
 	// Lab 4 your code here:
 
-	struct Env *src_e, *dest_e; 
+	struct Env *src_e, *dest_e;
 	if(envid2env(srcenvid, &src_e, 1) < 0 || envid2env(dstenvid, &dest_e, 1) < 0) {
 		return -E_BAD_ENV;
 	}
 
 	if ((uint32_t)srcva >=  UTOP || (uint32_t)srcva % PGSIZE != 0) {
-		return -E_INVAL; 
+		return -E_INVAL;
 	}
 
 	if ((uint32_t)dstva >=  UTOP || (uint32_t)dstva % PGSIZE != 0) {
-		return -E_INVAL; 
+		return -E_INVAL;
 	}
 
 	if ((perm & PTE_U) != PTE_U || (perm & PTE_P) != PTE_P) {
 		return -E_INVAL;
 	}
-	
+
 	if ((perm & ~PTE_SYSCALL) != 0) {
 		return -E_INVAL;
 	}
 
 
 	// look up the page from your source
-	pte_t* pte_store; 
-	struct PageInfo* src_pg = page_lookup(src_e -> env_pgdir, srcva, &pte_store); 
+	pte_t* pte_store;
+	struct PageInfo* src_pg = page_lookup(src_e -> env_pgdir, srcva, &pte_store);
 	if (!src_pg) {
 		return -E_INVAL;
 	}
@@ -297,7 +297,7 @@ sys_page_unmap(envid_t envid, void *va)
 
 	// LAB 4: Your code here.
 
-	struct Env* e; 
+	struct Env* e;
 	if(envid2env(envid, &e, 1) < 0) {
 		return -E_BAD_ENV;
 	}
@@ -307,7 +307,7 @@ sys_page_unmap(envid_t envid, void *va)
 	}
 
 	page_remove(e -> env_pgdir, va);
-	return 0; 
+	return 0;
 }
 
 // Try to send 'value' to the target env 'envid'.
@@ -352,8 +352,8 @@ static int
 sys_ipc_try_send(envid_t envid, uint32_t value, void *srcva, unsigned perm)
 {
 	// LAB 4: Your code here.
-	struct Env* e; 
-	if(envid2env(envid, &e, 1) < 0){
+	struct Env* e;
+	if(envid2env(envid, &e, 0) < 0){
 		return -E_BAD_ENV;
 	}
 
@@ -361,41 +361,42 @@ sys_ipc_try_send(envid_t envid, uint32_t value, void *srcva, unsigned perm)
 		return -E_IPC_NOT_RECV;
 	}
 
-	if((uint32_t)srcva < UTOP && (uint32_t)e -> env_ipc_dstva < UTOP) {
+	if((uint32_t) srcva < UTOP && (uint32_t) e->env_ipc_dstva < UTOP) {
 
 		// not page aligned
-		if ((uint32_t)srcva % PGSIZE != 0 || (uint32_t)e -> env_ipc_dstva % PGSIZE != 0) {
+		if ((uint32_t)srcva % PGSIZE || (uint32_t)e -> env_ipc_dstva % PGSIZE) {
 			return -E_INVAL;
 		}
 
 		// inappropriate permissions
-		if ((perm & PTE_U) == 0 || (perm & PTE_P) == 0 || (perm & ~PTE_SYSCALL)){
+		if (!(perm & PTE_U) || !(perm & PTE_P) || (perm & ~PTE_SYSCALL)){
 			return -E_INVAL;
 		}
 
-		// check if srcva is mapped in caller 
-		pte_t* pte_store; 
+		// check if srcva is mapped in caller
+		pte_t* pte_store;
 		struct PageInfo* page = page_lookup(curenv -> env_pgdir, srcva, &pte_store);
-		if(page == NULL || ((*pte_store & PTE_W) == 0 && (perm & PTE_W) != 0)) {
-			return -E_INVAL; 
+		if(page == NULL || (!(*pte_store & PTE_W) && (perm & PTE_W))) {
+			return -E_INVAL;
 		}
 
 		if(page_insert(e -> env_pgdir, page, e -> env_ipc_dstva, perm) < 0){
-			return -E_NO_MEM; 
+			return -E_NO_MEM;
 		}
+
 		e -> env_ipc_perm = perm;
 	}
 	else {
-		e -> env_ipc_perm = 0; 
+		e -> env_ipc_perm = 0;
 	}
 
-	// send successes + update ipc for target 
-	e -> env_ipc_recving = false; 
-	e -> env_ipc_from = curenv -> env_id; 
-	e -> env_ipc_value = value; 
-	
-	// return values 
-	e -> env_tf.tf_regs.reg_eax = 0; 
+	// send successes + update ipc for target
+	e -> env_ipc_recving = false;
+	e -> env_ipc_from = curenv -> env_id;
+	e -> env_ipc_value = value;
+
+	// return values
+	e -> env_tf.tf_regs.reg_eax = 0;
 	e -> env_status = ENV_RUNNABLE;
 
 	return 0;
@@ -416,15 +417,15 @@ static int
 sys_ipc_recv(void *dstva)
 {
 	// LAB 4: Your code here.
-	curenv -> env_ipc_recving = true; 
-	curenv -> env_ipc_dstva = (void*)UTOP; // dummy value 
-	curenv -> env_status = ENV_NOT_RUNNABLE; 
+	curenv -> env_ipc_recving = true;
+	curenv -> env_ipc_dstva = (void*)UTOP; // dummy value
+	curenv -> env_status = ENV_NOT_RUNNABLE;
 
 	if ((uint32_t)dstva < UTOP) {
-		
-		//ensure page alignment 
-		if ((uint32_t)dstva % PGSIZE != 0){
-			return -E_INVAL; 
+
+		//ensure page alignment
+		if ((uint32_t)dstva % PGSIZE){
+			return -E_INVAL;
 		}
 
 		curenv -> env_ipc_dstva = dstva;
@@ -461,7 +462,7 @@ syscall(uint32_t syscallno, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, 
         return sys_env_destroy((envid_t) a1);
     }
 	case SYS_yield:
-	{	
+	{
 		sys_yield();
 		return 0;
 	}
@@ -502,4 +503,3 @@ syscall(uint32_t syscallno, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, 
 		return -E_INVAL;
 	}
 }
-

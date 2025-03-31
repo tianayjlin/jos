@@ -134,25 +134,25 @@ trap_init(void)
     SETGATE(idt[T_MCHK], 0, GD_KT, t_mchk, 0);
     SETGATE(idt[T_SIMDERR], 0, GD_KT, t_simderr, 0);
 
-    SETGATE(idt[T_SYSCALL], 0, GD_KT, t_syscall, 3);
-
 	//LAB 4: wire all the irqs
-	SETGATE(idt[IRQ_OFFSET], 0, GD_KT, irq0_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + IRQ_KBD], 0, GD_KT, irq1_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 2], 0, GD_KT, irq2_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 3], 0, GD_KT, irq3_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + IRQ_SERIAL], 0, GD_KT, irq4_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 5], 0, GD_KT, irq5_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 6], 0, GD_KT, irq6_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + IRQ_SPURIOUS], 0, GD_KT, irq7_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 8], 0, GD_KT, irq8_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 9], 0, GD_KT, irq9_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 10], 0, GD_KT, irq10_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 11], 0, GD_KT, irq11_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 12], 0, GD_KT, irq12_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 13], 0, GD_KT, irq13_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + IRQ_IDE], 0, GD_KT, irq14_handler, 0); 
-	SETGATE(idt[IRQ_OFFSET + 14], 0, GD_KT, irq15_handler, 0); 
+	SETGATE(idt[IRQ_OFFSET], 0, GD_KT, irq0_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + IRQ_KBD], 0, GD_KT, irq1_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 2], 0, GD_KT, irq2_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 3], 0, GD_KT, irq3_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + IRQ_SERIAL], 0, GD_KT, irq4_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 5], 0, GD_KT, irq5_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 6], 0, GD_KT, irq6_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + IRQ_SPURIOUS], 0, GD_KT, irq7_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 8], 0, GD_KT, irq8_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 9], 0, GD_KT, irq9_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 10], 0, GD_KT, irq10_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 11], 0, GD_KT, irq11_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 12], 0, GD_KT, irq12_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 13], 0, GD_KT, irq13_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + IRQ_IDE], 0, GD_KT, irq14_handler, 0);
+	SETGATE(idt[IRQ_OFFSET + 15], 0, GD_KT, irq15_handler, 0);
+
+	SETGATE(idt[T_SYSCALL], 0, GD_KT, t_syscall, 3);
 
 
 	// Per-CPU setup
@@ -286,7 +286,7 @@ trap_dispatch(struct Trapframe *tf)
         }
     }
 
-	// Handle spurious interrup	
+	// Handle spurious interrup
 	// The hardware sometimes raises these because of noise on the
 	// IRQ line or other reasons. We don't care.
 	if (tf->tf_trapno == IRQ_OFFSET + IRQ_SPURIOUS) {
@@ -298,10 +298,10 @@ trap_dispatch(struct Trapframe *tf)
 	// Handle clock interrupts. Don't forget to acknowledge the
 	// interrupt using lapic_eoi() before calling the scheduler!
 	// LAB 4: Your code here.
-	
+
 	//check if trap is a clock interrupt
 	if(tf -> tf_trapno == IRQ_OFFSET + IRQ_TIMER) {
-		lapic_eoi(); 
+		lapic_eoi();
 		sched_yield();
 		return;
 	}
@@ -429,7 +429,7 @@ page_fault_handler(struct Trapframe *tf)
 
 	// LAB 4: Your code here.
 
-	// handle lack of page fault upcall and overflow 
+	// handle lack of page fault upcall and overflow
 	if (curenv -> env_pgfault_upcall == NULL){
 
 		// Destroy the environment that caused the fault.
@@ -441,10 +441,10 @@ page_fault_handler(struct Trapframe *tf)
 	}
 
 	// slap on some user trap frames
-	uint32_t stack_top; 
-	// starting the exception stack, make the gap 
+	uint32_t stack_top;
+	// starting the exception stack, make the gap
 	if (tf -> tf_esp < UXSTACKTOP && tf -> tf_esp >= (UXSTACKTOP - PGSIZE)) {
-		stack_top = tf -> tf_esp - 4 - sizeof(struct UTrapframe); 
+		stack_top = tf -> tf_esp - 4 - sizeof(struct UTrapframe);
 	}
 	else { // continue to push onto the user exception stack, along with buffer
 		stack_top = UXSTACKTOP - sizeof(struct UTrapframe);
@@ -453,21 +453,20 @@ page_fault_handler(struct Trapframe *tf)
 	// check that current environment can place utrapframe onto stack
 	user_mem_assert(curenv, (void*)stack_top, sizeof(struct UTrapframe), PTE_W | PTE_U);
 
-	// actually push the utrapframe onto stack 
+	// actually push the utrapframe onto stack
 	// this moves the trapped error to a user trap
-	struct UTrapframe* x_trap = (struct UTrapframe*)stack_top; 
-	x_trap -> utf_fault_va = fault_va; 
+	struct UTrapframe* x_trap = (struct UTrapframe*)stack_top;
+	x_trap -> utf_fault_va = fault_va;
 	x_trap -> utf_err = tf -> tf_err;
-	x_trap -> utf_regs = tf -> tf_regs; 
-	x_trap -> utf_eip = tf -> tf_eip; 
+	x_trap -> utf_regs = tf -> tf_regs;
+	x_trap -> utf_eip = tf -> tf_eip;
 	x_trap -> utf_eflags = tf -> tf_eflags;
 	x_trap -> utf_esp = tf -> tf_esp;
 
 	// update the stack pointer because it doesn't move itself:(
-	tf -> tf_esp = (uintptr_t)stack_top; 
-	tf -> tf_eip = (uintptr_t)curenv -> env_pgfault_upcall;
+	curenv->env_tf.tf_esp = (uintptr_t)stack_top;
+	curenv->env_tf.tf_eip = (uintptr_t)curenv -> env_pgfault_upcall;
 
-	env_run(curenv); 
+	env_run(curenv);
 
 }
-
