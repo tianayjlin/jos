@@ -228,14 +228,9 @@ git-handin: handin-check
 
 WEBSUB := https://6828.scripts.mit.edu/2018/handin.py
 
-handin: tarball-pref myapi.key
+handin: tarball-pref
 	@SUF=$(LAB); \
-	test -f .suf && SUF=`cat .suf`; \
-	curl -f -F file=@lab$$SUF-handin.tar.gz -F key=\<myapi.key $(WEBSUB)/upload \
-	    > /dev/null || { \
-		echo ; \
-		echo Submit seems to have failed.; \
-		echo Please go to $(WEBSUB)/ and upload the tarball manually.; }
+	echo "Please submit lab$(LAB)-handin.tar.gz to Brightspace for your group.";\
 
 handin-check:
 	@if ! test -d .git; then \
