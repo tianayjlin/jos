@@ -30,31 +30,24 @@ sched_yield(void)
 
 	// LAB 4: Your code here.
 
-	// 0 is not necessarily the current_env, but you still want to iterate through NENV enironments
-	// i just serves as a counter to ensure you are doing it NENV times
-	size_t next_idx;  
+	// every time this function is called you are already on the next probe index.
+	// when you start the OS you start from the first one 
 
-	// there is no current env running/you are past the "end"
-	if(curenv == NULL) {
-		next_idx = 0; 
-	}
-	else {
-		size_t curr_idx = ENVX(curenv -> env_id);
-		next_idx = (curr_idx + 1) % NENV;
-	}
+	// there is no previous state/last environment for the scheduler to reference at the beginning of system execution
+	static size_t probe = 0;
 
-	for (size_t i = 0; i < NENV; i++) {
+	for (size_t i = probe; i < probe + NENV; i++) {
+		size_t idx = i % NENV;
 		
-		// if there is a next environment that is runnable, run it 
-		if(envs[next_idx].env_status == ENV_RUNNABLE) {
-			env_run(&envs[next_idx]);
-		} 
+		// check if it is runnable and not already running on another cpu
+		if(envs[idx].env_status == ENV_RUNNABLE) { // nature of enum means we can only have one env_status at a time!
+			probe = (idx + 1) % NENV;
+			env_run(&envs[idx]); // this "breaks", next time it will be called will be through trap handler
+		}
+	}	
 
-		next_idx = (next_idx + 1) % NENV;
-	}
-
-	// keep running if you're already processing something
-	if (curenv != NULL && curenv -> env_status == ENV_RUNNING) {
+	// if there are no runnable environments, then we don't need to round robin. keep running the current one.
+	if(curenv != NULL && curenv -> env_status == ENV_RUNNING) {
 		env_run(curenv);
 	}
 

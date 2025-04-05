@@ -97,7 +97,7 @@ sys_exofork(void)
 	}
 
 	new_env -> env_status = ENV_NOT_RUNNABLE;
-	memcpy((void*)&new_env -> env_tf, (void*)&curenv -> env_tf, sizeof(struct Trapframe));
+	new_env -> env_tf  = curenv -> env_tf;
 
 	new_env -> env_tf.tf_regs.reg_eax = 0;
 
@@ -122,7 +122,8 @@ sys_env_set_status(envid_t envid, int status)
 
 	// LAB 4: Your code here.
 
-	if (status != ENV_NOT_RUNNABLE && status != ENV_RUNNABLE) {
+	//if your environment is NOT_RUNNABLE or currently running, or if its an error code
+	if (status > ENV_NOT_RUNNABLE || status < ENV_FREE) {
 		return -E_INVAL;
 	}
 
