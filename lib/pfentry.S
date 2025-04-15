@@ -34,9 +34,9 @@
 _pgfault_upcall:
 	// Call the C page fault handler.
 	pushl %esp			// function argument: pointer to UTF
-	movl _pgfault_handler, %eax
-	call *%eax
-	addl $4, %esp			// pop function argument
+	movl _pgfault_handler, %eax 
+	call *%eax	// kernel runs the user space handler
+	addl $4, %esp			// pop function argument, continue handling the rest of exception in user
 	
 	// Now the C page fault handler has returned and you must return
 	// to the trap time state.
@@ -65,18 +65,41 @@ _pgfault_upcall:
 	// ways as registers become unavailable as scratch space.
 	//
 	// LAB 4: Your code here.
+	
+	// the eip is under the UTrapFrame, get the offset from it, and save the exception stack 
+	movl 0x28(%esp), %eax
+	movl %esp, %ebp 
 
+	// switch to trap time stack, remember to account for the 4 byte buffer
+	movl 0x30(%esp), %esp
+	pushl %eax // this doesn't push onto esp btw!!!!!
+
+	// moves trap time exception from stack to the struct
+	movl %esp, 0x30(%ebp) // tf -> esp = current esp 
+
+	// move saved exception stack pointer back to the stack pointer
+	movl %ebp, %esp 
+	
+	
 	// Restore the trap-time registers.  After you do this, you
 	// can no longer modify any general-purpose registers.
 	// LAB 4: Your code here.
+
+	// you want to deal with the register (utf_regs) from the trap frame struct, hence you must skip the first two fields 
+	addl $0x08, %esp 
+	popal 
 
 	// Restore eflags from the stack.  After you do this, you can
 	// no longer use arithmetic operations or anything else that
 	// modifies eflags.
 	// LAB 4: Your code here.
+	addl $0x04, %esp
+	popfl 
 
 	// Switch back to the adjusted trap-time stack.
 	// LAB 4: Your code here.
+	popl %esp
 
 	// Return to re-execute the instruction that faulted.
 	// LAB 4: Your code here.
+	ret
