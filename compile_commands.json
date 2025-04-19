@@ -1,10 +1,9 @@
 [
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -17,6 +16,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -26,16 +26,15 @@
       "obj/kern/entry.o",
       "kern/entry.S"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/entry.S",
-    "output": "/home/odin/Projects/jos/obj/kern/entry.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/entry.S",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/entry.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -48,6 +47,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -57,16 +57,15 @@
       "obj/kern/entrypgdir.o",
       "kern/entrypgdir.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/entrypgdir.c",
-    "output": "/home/odin/Projects/jos/obj/kern/entrypgdir.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/entrypgdir.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/entrypgdir.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -79,6 +78,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -88,16 +88,15 @@
       "obj/kern/init.o",
       "kern/init.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/init.c",
-    "output": "/home/odin/Projects/jos/obj/kern/init.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/init.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/init.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -110,6 +109,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -119,16 +119,15 @@
       "obj/kern/console.o",
       "kern/console.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/console.c",
-    "output": "/home/odin/Projects/jos/obj/kern/console.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/console.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/console.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -141,6 +140,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -150,16 +150,15 @@
       "obj/kern/monitor.o",
       "kern/monitor.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/monitor.c",
-    "output": "/home/odin/Projects/jos/obj/kern/monitor.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/monitor.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/monitor.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -172,6 +171,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -181,16 +181,15 @@
       "obj/kern/pmap.o",
       "kern/pmap.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/pmap.c",
-    "output": "/home/odin/Projects/jos/obj/kern/pmap.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/pmap.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/pmap.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -203,6 +202,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -212,16 +212,15 @@
       "obj/kern/env.o",
       "kern/env.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/env.c",
-    "output": "/home/odin/Projects/jos/obj/kern/env.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/env.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/env.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -234,6 +233,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -243,16 +243,15 @@
       "obj/kern/kclock.o",
       "kern/kclock.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/kclock.c",
-    "output": "/home/odin/Projects/jos/obj/kern/kclock.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/kclock.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/kclock.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -265,6 +264,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -274,16 +274,15 @@
       "obj/kern/picirq.o",
       "kern/picirq.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/picirq.c",
-    "output": "/home/odin/Projects/jos/obj/kern/picirq.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/picirq.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/picirq.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -296,6 +295,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -305,16 +305,15 @@
       "obj/kern/printf.o",
       "kern/printf.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/printf.c",
-    "output": "/home/odin/Projects/jos/obj/kern/printf.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/printf.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/printf.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -327,6 +326,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -336,16 +336,15 @@
       "obj/kern/trap.o",
       "kern/trap.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/trap.c",
-    "output": "/home/odin/Projects/jos/obj/kern/trap.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/trap.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/trap.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -358,6 +357,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -367,16 +367,15 @@
       "obj/kern/trapentry.o",
       "kern/trapentry.S"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/trapentry.S",
-    "output": "/home/odin/Projects/jos/obj/kern/trapentry.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/trapentry.S",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/trapentry.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -389,6 +388,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -398,16 +398,15 @@
       "obj/kern/sched.o",
       "kern/sched.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/sched.c",
-    "output": "/home/odin/Projects/jos/obj/kern/sched.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/sched.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/sched.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -420,6 +419,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -429,16 +429,15 @@
       "obj/kern/syscall.o",
       "kern/syscall.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/syscall.c",
-    "output": "/home/odin/Projects/jos/obj/kern/syscall.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/syscall.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/syscall.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -451,6 +450,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -460,16 +460,15 @@
       "obj/kern/kdebug.o",
       "kern/kdebug.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/kdebug.c",
-    "output": "/home/odin/Projects/jos/obj/kern/kdebug.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/kdebug.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/kdebug.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -482,6 +481,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -491,16 +491,15 @@
       "obj/kern/printfmt.o",
       "lib/printfmt.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/printfmt.c",
-    "output": "/home/odin/Projects/jos/obj/kern/printfmt.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/printfmt.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/printfmt.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -513,6 +512,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -522,16 +522,15 @@
       "obj/kern/readline.o",
       "lib/readline.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/readline.c",
-    "output": "/home/odin/Projects/jos/obj/kern/readline.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/readline.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/readline.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -544,6 +543,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -553,16 +553,15 @@
       "obj/kern/string.o",
       "lib/string.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/string.c",
-    "output": "/home/odin/Projects/jos/obj/kern/string.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/string.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/string.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -575,6 +574,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -584,16 +584,15 @@
       "obj/kern/mpentry.o",
       "kern/mpentry.S"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/mpentry.S",
-    "output": "/home/odin/Projects/jos/obj/kern/mpentry.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/mpentry.S",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/mpentry.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -606,6 +605,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -615,16 +615,15 @@
       "obj/kern/mpconfig.o",
       "kern/mpconfig.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/mpconfig.c",
-    "output": "/home/odin/Projects/jos/obj/kern/mpconfig.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/mpconfig.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/mpconfig.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -637,6 +636,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -646,16 +646,15 @@
       "obj/kern/lapic.o",
       "kern/lapic.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/lapic.c",
-    "output": "/home/odin/Projects/jos/obj/kern/lapic.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/lapic.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/lapic.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -668,6 +667,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -677,16 +677,15 @@
       "obj/kern/spinlock.o",
       "kern/spinlock.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/kern/spinlock.c",
-    "output": "/home/odin/Projects/jos/obj/kern/spinlock.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/kern/spinlock.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/kern/spinlock.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -699,37 +698,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
-      "-fno-tree-ch",
-      "-fno-stack-protector",
-      "-DJOS_USER",
-      "-gstabs",
-      "-c",
-      "-o",
-      "obj/user/hello.o",
-      "user/hello.c"
-    ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/hello.c",
-    "output": "/home/odin/Projects/jos/obj/user/hello.o"
-  },
-  {
-    "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
-      "-pipe",
-      "-nostdinc",
-      "-Wno-format-security",
-      "-O1",
-      "-fno-builtin",
-      "-I.",
-      "-fno-omit-frame-pointer",
-      "-std=gnu99",
-      "-fno-pie",
-      "-Wall",
-      "-Wno-format",
-      "-Wno-unused",
-      "-Werror",
-      "-gstabs",
-      "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -739,16 +708,15 @@
       "obj/lib/entry.o",
       "lib/entry.S"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/entry.S",
-    "output": "/home/odin/Projects/jos/obj/lib/entry.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/entry.S",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/entry.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -761,6 +729,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -770,16 +739,15 @@
       "obj/lib/console.o",
       "lib/console.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/console.c",
-    "output": "/home/odin/Projects/jos/obj/lib/console.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/console.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/console.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -792,6 +760,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -801,16 +770,15 @@
       "obj/lib/libmain.o",
       "lib/libmain.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/libmain.c",
-    "output": "/home/odin/Projects/jos/obj/lib/libmain.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/libmain.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/libmain.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -823,6 +791,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -832,16 +801,15 @@
       "obj/lib/exit.o",
       "lib/exit.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/exit.c",
-    "output": "/home/odin/Projects/jos/obj/lib/exit.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/exit.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/exit.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -854,6 +822,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -863,16 +832,15 @@
       "obj/lib/panic.o",
       "lib/panic.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/panic.c",
-    "output": "/home/odin/Projects/jos/obj/lib/panic.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/panic.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/panic.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -885,6 +853,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -894,16 +863,15 @@
       "obj/lib/printf.o",
       "lib/printf.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/printf.c",
-    "output": "/home/odin/Projects/jos/obj/lib/printf.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/printf.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/printf.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -916,6 +884,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -925,16 +894,15 @@
       "obj/lib/printfmt.o",
       "lib/printfmt.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/printfmt.c",
-    "output": "/home/odin/Projects/jos/obj/lib/printfmt.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/printfmt.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/printfmt.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -947,6 +915,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -956,16 +925,15 @@
       "obj/lib/readline.o",
       "lib/readline.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/readline.c",
-    "output": "/home/odin/Projects/jos/obj/lib/readline.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/readline.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/readline.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -978,6 +946,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -987,16 +956,15 @@
       "obj/lib/string.o",
       "lib/string.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/string.c",
-    "output": "/home/odin/Projects/jos/obj/lib/string.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/string.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/string.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1009,6 +977,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1018,16 +987,15 @@
       "obj/lib/syscall.o",
       "lib/syscall.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/syscall.c",
-    "output": "/home/odin/Projects/jos/obj/lib/syscall.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/syscall.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/syscall.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1040,6 +1008,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1049,16 +1018,15 @@
       "obj/lib/pgfault.o",
       "lib/pgfault.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/pgfault.c",
-    "output": "/home/odin/Projects/jos/obj/lib/pgfault.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/pgfault.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/pgfault.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1071,6 +1039,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1080,16 +1049,15 @@
       "obj/lib/pfentry.o",
       "lib/pfentry.S"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/pfentry.S",
-    "output": "/home/odin/Projects/jos/obj/lib/pfentry.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/pfentry.S",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/pfentry.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1102,6 +1070,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1111,16 +1080,15 @@
       "obj/lib/fork.o",
       "lib/fork.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/fork.c",
-    "output": "/home/odin/Projects/jos/obj/lib/fork.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/fork.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/fork.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1133,6 +1101,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1142,16 +1111,15 @@
       "obj/lib/ipc.o",
       "lib/ipc.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/lib/ipc.c",
-    "output": "/home/odin/Projects/jos/obj/lib/ipc.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/ipc.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/ipc.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1164,6 +1132,286 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/args.o",
+      "lib/args.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/args.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/args.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/fd.o",
+      "lib/fd.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/fd.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/file.o",
+      "lib/file.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/file.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/file.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/fprintf.o",
+      "lib/fprintf.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/fprintf.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/fprintf.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/pageref.o",
+      "lib/pageref.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/pageref.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/pageref.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/spawn.o",
+      "lib/spawn.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/spawn.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/spawn.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/pipe.o",
+      "lib/pipe.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/pipe.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/pipe.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/lib/wait.o",
+      "lib/wait.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/lib/wait.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/lib/wait.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/hello.o",
+      "user/hello.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/hello.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/hello.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1173,16 +1421,15 @@
       "obj/user/buggyhello.o",
       "user/buggyhello.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/buggyhello.c",
-    "output": "/home/odin/Projects/jos/obj/user/buggyhello.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/buggyhello.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/buggyhello.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1195,6 +1442,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1204,16 +1452,15 @@
       "obj/user/buggyhello2.o",
       "user/buggyhello2.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/buggyhello2.c",
-    "output": "/home/odin/Projects/jos/obj/user/buggyhello2.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/buggyhello2.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/buggyhello2.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1226,6 +1473,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1235,16 +1483,15 @@
       "obj/user/evilhello.o",
       "user/evilhello.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/evilhello.c",
-    "output": "/home/odin/Projects/jos/obj/user/evilhello.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/evilhello.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/evilhello.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1257,6 +1504,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1266,16 +1514,15 @@
       "obj/user/testbss.o",
       "user/testbss.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/testbss.c",
-    "output": "/home/odin/Projects/jos/obj/user/testbss.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testbss.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testbss.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1288,6 +1535,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1297,16 +1545,15 @@
       "obj/user/divzero.o",
       "user/divzero.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/divzero.c",
-    "output": "/home/odin/Projects/jos/obj/user/divzero.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/divzero.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/divzero.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1319,6 +1566,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1328,16 +1576,15 @@
       "obj/user/breakpoint.o",
       "user/breakpoint.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/breakpoint.c",
-    "output": "/home/odin/Projects/jos/obj/user/breakpoint.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/breakpoint.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/breakpoint.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1350,6 +1597,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1359,16 +1607,15 @@
       "obj/user/softint.o",
       "user/softint.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/softint.c",
-    "output": "/home/odin/Projects/jos/obj/user/softint.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/softint.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/softint.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1381,6 +1628,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1390,16 +1638,15 @@
       "obj/user/badsegment.o",
       "user/badsegment.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/badsegment.c",
-    "output": "/home/odin/Projects/jos/obj/user/badsegment.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/badsegment.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/badsegment.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1412,6 +1659,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1421,16 +1669,15 @@
       "obj/user/faultread.o",
       "user/faultread.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultread.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultread.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultread.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultread.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1443,6 +1690,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1452,16 +1700,15 @@
       "obj/user/faultreadkernel.o",
       "user/faultreadkernel.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultreadkernel.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultreadkernel.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultreadkernel.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultreadkernel.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1474,6 +1721,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1483,16 +1731,15 @@
       "obj/user/faultwrite.o",
       "user/faultwrite.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultwrite.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultwrite.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultwrite.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultwrite.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1505,6 +1752,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1514,16 +1762,15 @@
       "obj/user/faultwritekernel.o",
       "user/faultwritekernel.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultwritekernel.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultwritekernel.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultwritekernel.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultwritekernel.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1536,6 +1783,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1545,16 +1793,15 @@
       "obj/user/idle.o",
       "user/idle.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/idle.c",
-    "output": "/home/odin/Projects/jos/obj/user/idle.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/idle.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/idle.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1567,6 +1814,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1576,16 +1824,15 @@
       "obj/user/yield.o",
       "user/yield.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/yield.c",
-    "output": "/home/odin/Projects/jos/obj/user/yield.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/yield.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/yield.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1598,6 +1845,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1607,16 +1855,15 @@
       "obj/user/dumbfork.o",
       "user/dumbfork.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/dumbfork.c",
-    "output": "/home/odin/Projects/jos/obj/user/dumbfork.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/dumbfork.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/dumbfork.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1629,6 +1876,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1638,16 +1886,15 @@
       "obj/user/stresssched.o",
       "user/stresssched.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/stresssched.c",
-    "output": "/home/odin/Projects/jos/obj/user/stresssched.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/stresssched.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/stresssched.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1660,6 +1907,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1669,16 +1917,15 @@
       "obj/user/faultdie.o",
       "user/faultdie.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultdie.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultdie.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultdie.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultdie.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1691,6 +1938,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1700,16 +1948,15 @@
       "obj/user/faultregs.o",
       "user/faultregs.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultregs.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultregs.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultregs.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultregs.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1722,6 +1969,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1731,16 +1979,15 @@
       "obj/user/faultalloc.o",
       "user/faultalloc.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultalloc.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultalloc.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultalloc.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultalloc.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1753,6 +2000,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1762,16 +2010,15 @@
       "obj/user/faultallocbad.o",
       "user/faultallocbad.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultallocbad.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultallocbad.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultallocbad.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultallocbad.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1784,6 +2031,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1793,16 +2041,15 @@
       "obj/user/faultnostack.o",
       "user/faultnostack.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultnostack.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultnostack.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultnostack.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultnostack.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1815,6 +2062,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1824,16 +2072,15 @@
       "obj/user/faultbadhandler.o",
       "user/faultbadhandler.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultbadhandler.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultbadhandler.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultbadhandler.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultbadhandler.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1846,6 +2093,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1855,16 +2103,15 @@
       "obj/user/faultevilhandler.o",
       "user/faultevilhandler.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/faultevilhandler.c",
-    "output": "/home/odin/Projects/jos/obj/user/faultevilhandler.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultevilhandler.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultevilhandler.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1877,6 +2124,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1886,16 +2134,15 @@
       "obj/user/forktree.o",
       "user/forktree.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/forktree.c",
-    "output": "/home/odin/Projects/jos/obj/user/forktree.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/forktree.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/forktree.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1908,6 +2155,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1917,16 +2165,15 @@
       "obj/user/sendpage.o",
       "user/sendpage.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/sendpage.c",
-    "output": "/home/odin/Projects/jos/obj/user/sendpage.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/sendpage.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/sendpage.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1939,6 +2186,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1948,16 +2196,15 @@
       "obj/user/spin.o",
       "user/spin.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/spin.c",
-    "output": "/home/odin/Projects/jos/obj/user/spin.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/spin.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/spin.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -1970,6 +2217,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -1979,16 +2227,15 @@
       "obj/user/fairness.o",
       "user/fairness.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/fairness.c",
-    "output": "/home/odin/Projects/jos/obj/user/fairness.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/fairness.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/fairness.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2001,6 +2248,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -2010,16 +2258,15 @@
       "obj/user/pingpong.o",
       "user/pingpong.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/pingpong.c",
-    "output": "/home/odin/Projects/jos/obj/user/pingpong.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/pingpong.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/pingpong.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2032,6 +2279,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -2041,16 +2289,15 @@
       "obj/user/pingpongs.o",
       "user/pingpongs.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/pingpongs.c",
-    "output": "/home/odin/Projects/jos/obj/user/pingpongs.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/pingpongs.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/pingpongs.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2063,6 +2310,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
@@ -2072,16 +2320,15 @@
       "obj/user/primes.o",
       "user/primes.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/primes.c",
-    "output": "/home/odin/Projects/jos/obj/user/primes.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/primes.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/primes.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2094,25 +2341,25 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
       "-gstabs",
       "-c",
       "-o",
-      "obj/user/ipcstress.o",
-      "user/ipcstress.c"
+      "obj/user/faultio.o",
+      "user/faultio.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/ipcstress.c",
-    "output": "/home/odin/Projects/jos/obj/user/ipcstress.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/faultio.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/faultio.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2125,25 +2372,25 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_USER",
       "-gstabs",
       "-c",
       "-o",
-      "obj/user/recursivefork.o",
-      "user/recursivefork.c"
+      "obj/user/spawnfaultio.o",
+      "user/spawnfaultio.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/user/recursivefork.c",
-    "output": "/home/odin/Projects/jos/obj/user/recursivefork.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/spawnfaultio.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/spawnfaultio.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2156,6 +2403,503 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testfile.o",
+      "user/testfile.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testfile.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testfile.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/spawnhello.o",
+      "user/spawnhello.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/spawnhello.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/spawnhello.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/icode.o",
+      "user/icode.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/icode.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/icode.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/fs/ide.o",
+      "fs/ide.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/fs/ide.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/fs/ide.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/fs/bc.o",
+      "fs/bc.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/fs/bc.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/fs/bc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/fs/fs.o",
+      "fs/fs.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/fs/fs.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/fs/fs.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/fs/serv.o",
+      "fs/serv.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/fs/serv.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/fs/serv.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/fs/test.o",
+      "fs/test.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/fs/test.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/fs/test.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testpteshare.o",
+      "user/testpteshare.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testpteshare.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testpteshare.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testfdsharing.o",
+      "user/testfdsharing.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testfdsharing.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testfdsharing.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testpipe.o",
+      "user/testpipe.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testpipe.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testpipe.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testpiperace.o",
+      "user/testpiperace.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testpiperace.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testpiperace.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testpiperace2.o",
+      "user/testpiperace2.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testpiperace2.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testpiperace2.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/primespipe.o",
+      "user/primespipe.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/primespipe.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/primespipe.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testkbd.o",
+      "user/testkbd.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testkbd.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testkbd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/testshell.o",
+      "user/testshell.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/testshell.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/testshell.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -2165,16 +2909,15 @@
       "obj/boot/boot.o",
       "boot/boot.S"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/boot/boot.S",
-    "output": "/home/odin/Projects/jos/obj/boot/boot.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/boot/boot.S",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/boot/boot.o"
   },
   {
     "arguments": [
-      "/nix/store/yacrr6f8dmrj1v84vgk9irxvpdwhxxm8-gcc-wrapper-13.3.0/bin/gcc",
+      "/usr/bin/gcc",
       "-pipe",
       "-nostdinc",
-      "-Wno-format-security",
       "-O1",
       "-fno-builtin",
       "-I.",
@@ -2187,6 +2930,7 @@
       "-Werror",
       "-gstabs",
       "-m32",
+      "-Wno-address-of-packed-member",
       "-fno-tree-ch",
       "-fno-stack-protector",
       "-DJOS_KERNEL",
@@ -2197,8 +2941,240 @@
       "obj/boot/main.o",
       "boot/main.c"
     ],
-    "directory": "/home/odin/Projects/jos",
-    "file": "/home/odin/Projects/jos/boot/main.c",
-    "output": "/home/odin/Projects/jos/obj/boot/main.o"
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/boot/main.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/boot/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-pipe",
+      "-I.",
+      "-Wall",
+      "-o",
+      "obj/fs/fsformat",
+      "fs/fsformat.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/fs/fsformat.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/fs/fsformat"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/init.o",
+      "user/init.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/init.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/init.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/cat.o",
+      "user/cat.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/cat.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/cat.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/echo.o",
+      "user/echo.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/echo.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/echo.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/ls.o",
+      "user/ls.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/ls.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/ls.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/lsfd.o",
+      "user/lsfd.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/lsfd.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/lsfd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/num.o",
+      "user/num.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/num.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/num.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-pipe",
+      "-nostdinc",
+      "-O1",
+      "-fno-builtin",
+      "-I.",
+      "-fno-omit-frame-pointer",
+      "-std=gnu99",
+      "-fno-pie",
+      "-Wall",
+      "-Wno-format",
+      "-Wno-unused",
+      "-Werror",
+      "-gstabs",
+      "-m32",
+      "-Wno-address-of-packed-member",
+      "-fno-tree-ch",
+      "-fno-stack-protector",
+      "-DJOS_USER",
+      "-gstabs",
+      "-c",
+      "-o",
+      "obj/user/sh.o",
+      "user/sh.c"
+    ],
+    "directory": "/home/shay/a/lin1542/Desktop/469/jos",
+    "file": "/home/shay/a/lin1542/Desktop/469/jos/user/sh.c",
+    "output": "/home/shay/a/lin1542/Desktop/469/jos/obj/user/sh.o"
   }
 ]
