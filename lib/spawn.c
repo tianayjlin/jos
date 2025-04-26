@@ -1,3 +1,4 @@
+#include "inc/mmu.h"
 #include <inc/lib.h>
 #include <inc/elf.h>
 
@@ -302,6 +303,19 @@ static int
 copy_shared_pages(envid_t child)
 {
 	// LAB 5: Your code here.
+	int r; 
+
+	for (unsigned pn = 0; pn < (USTACKTOP / PGSIZE); pn++) {
+
+		void* addr = (void*) (pn * PGSIZE);
+
+		// check permission and dupe present and user (short if kernel page dne)
+		if((uvpd[PDX(addr)] & PTE_P) != 0 && (uvpt[pn] & PTE_P) != 0 && (uvpt[pn] & PTE_SHARE) != 0) {
+			if((r = sys_page_map(0, addr, child, addr, uvpt[pn] & PTE_SYSCALL)) < 0) {
+				return r;
+			}
+		} 
+	}
 	return 0;
 }
 

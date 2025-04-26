@@ -85,7 +85,7 @@ duppage(envid_t envid, unsigned pn)
 	envid_t curenv = sys_getenvid();
 	if ((pte_pn & PTE_SHARE) != 0) {
 		// pg_addr is virtual, which means the same values can be reused amongst different envs
-		r = sys_page_map(curenv, pg_addr, envid, pg_addr, PTE_SYSCALL);
+		r = sys_page_map(curenv, pg_addr, envid, pg_addr, uvpt[pn] & PTE_SYSCALL);
 	}
 	
 	// if parent process is write or COW, apply those COW permissions to the child. 
@@ -97,7 +97,7 @@ duppage(envid_t envid, unsigned pn)
 			r = sys_page_map(curenv, pg_addr, curenv, pg_addr, PTE_COW | PTE_U | PTE_P);
 		}
 	}
-	
+
 	else {
 		r = sys_page_map(curenv, pg_addr, envid, pg_addr, PTE_U | PTE_P);
 	}
