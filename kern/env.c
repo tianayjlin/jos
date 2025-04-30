@@ -444,8 +444,10 @@ env_create(uint8_t *binary, enum EnvType type)
 	// LAB 5: Your code here.
 
 	// X86 uses IOPL flag to determine i/o privilege
-	if (type == ENV_TYPE_FS) { 
-		new_env -> env_tf.tf_eflags |= FL_IOPL_3;
+	if (type == ENV_TYPE_FS) {
+		new_env->env_tf.tf_eflags |= FL_IOPL_3;
+	} else {
+		new_env->env_tf.tf_eflags |= FL_IOPL_0;
 	}
 
     new_env->env_type = type;

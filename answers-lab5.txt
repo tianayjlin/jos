@@ -1,0 +1,3 @@
+Question 1: Do you have to do anything else to ensure that this I/O privilege setting is saved and restored properly when you subsequently switch from one environment to another? Why?
+
+We save the current environment's state and registers when we are creating a new environment. env_pop_tf() is hence, a wrapper for assembly functions needed to pop the trap frame, ending in 'iret'. 
